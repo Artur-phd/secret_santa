@@ -6,3 +6,7 @@
   <p><i>Aiogram</i></p>
   <p><i>SQLite</i></p>
 </div>
+
+<div>
+  <p style="color: red">You can use this when you want to play with your friends!</p>
+</div>
