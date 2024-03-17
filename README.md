@@ -8,5 +8,5 @@
 </div>
 
 <div>
-  <p style="color: red">You can use this when you want to play with your friends!</p>
+  <p style="color: green">You can use this when you want to play with your friends!</p>
 </div>
