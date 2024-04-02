@@ -226,9 +226,7 @@ async def call_qh(call: types.CallbackQuery, state=FSMContext):
 
     elif call.data == 'yes_end_game':
         team_data = functions.db_connect(db_name='players_data.sql', request="SELECT team FROM users WHERE user_id = '%s'" % (call.from_user.id), do='get')
-        print(team_data)
         team_id = functions.db_connect(db_name='players_data.sql', request="SELECT user_id FROM users WHERE team = '%s'" % (team_data[0][0]), do='get')
-        print(team_id)
         functions.db_connect(db_name='players_data.sql', request="DELETE FROM users WHERE user_id = '%s'" % (call.from_user.id), do='post')
         
         markup = types.InlineKeyboardMarkup(row_width=1)
@@ -254,7 +252,6 @@ async def call_qh(call: types.CallbackQuery, state=FSMContext):
         if len(lo) != 0: 
             level = int(lo[0][0])
             level += 1
-            print(level)
             functions.db_connect(db_name='players_data.sql', request="UPDATE levels SET level = '%s' WHERE id = '%s'" % (level, call.from_user.id), do='post')        
         functions.db_connect(db_name="players_data.sql", request="DELETE FROM users WHERE user_id = '%s'" % (call.from_user.id), do='post')
         await call.message.edit_text('Ok')
